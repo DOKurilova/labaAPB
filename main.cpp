@@ -1,5 +1,6 @@
-//#include "sort.cpp"
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
 enum SortOrder
@@ -78,6 +79,20 @@ void printArray(int *arr, int n)
     }
 }
 
+//вывод массива в файл
+void printArrayToFile(int *arr, int n)
+{
+    ofstream fout;
+    fout.open("../dataFiles/output.txt",ios::out);
+
+    for (int i = 0; i < n; i++)
+    {
+        fout << arr[i] << " ";
+
+    }
+    fout.close();
+}
+
 
 int main()
 {
@@ -93,6 +108,7 @@ int main()
     arr = bubbleSort(arr, size, ASC);
 
     printArray(arr, size);
+    printArrayToFile(arr,size);
 
     delete arr;
     cout << endl;
