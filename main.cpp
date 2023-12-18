@@ -106,6 +106,7 @@ int main()
     arr = bubbleSort(arr, size, ASC);
 
     printArray(arr, size);
+    printArrayToFile(arr,size);
 
     delete arr;
     cout << endl;
