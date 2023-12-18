@@ -1,5 +1,6 @@
 //#include "sort.cpp"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 enum SortOrder
@@ -60,6 +61,7 @@ int *bubbleSort(int *array, int n, SortOrder sortOrder)
 //заполнение массива с клавиатуры
 int *fillArray(int *arr, int n)
 {
+
     for (int i = 0; i < n; i++)
     {
         std::cout << "arr[" << i << "] = ";
@@ -72,6 +74,17 @@ int *fillArray(int *arr, int n)
 //вывод массива на экран
 void printArray(int *arr, int n)
 {
+    for (int i = 0; i < n; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+}
+
+//вывод массива на экран
+void printArrayToFile(int *arr, int n)
+{
+    ofstream fout;
+    fout.open("../dataFiles/output.txt");
     for (int i = 0; i < n; i++)
     {
         std::cout << arr[i] << " ";
